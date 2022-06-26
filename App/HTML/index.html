@@ -5,92 +5,99 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Njimoke Rane Soulemanou" />
-
-    <title>PORTFOLIO - I</title>
-
-    <!-- links -->
-    <link rel="stylesheet" href="/dist/main.css" />
-    <link rel="icon" href="/Images/njims.png" type="image/x-icon" />
+    <title>PORTFOLIO-I</title>
   </head>
+
+  <!-- ====== links ====== -->
+  <link rel="stylesheet" href="/dist/main.css" />
+  <link rel="icon" href="/Images/njims.png" type="image/x-icon" />
   <body>
-    <!-- ===== side bar ====== -->
+    <!-- ====== hero image is the back ground image -->
+    <div class="heroImage"></div>
 
-    <div class="sideBar">
-      <a href="#" id="logo">N<sub>R</sub></a>
-
-      <nav class="navLinks">
-        <p>
-          <a href="#">
-            <img src="/Images/ball.png" alt="ball logo" />
-          </a>
-        </p>
-
-        <p>
-          <a href="#">
-            <img src="/Images/be.png" alt="be logo" />
-          </a>
-        </p>
-
-        <p>
-          <a href="#">
-            <img src="/Images/insta.png" alt="insta logo" />
-          </a>
-        </p>
-
-        <p>
-          <a href="#">
-            <img src="/Images/twitter.png" alt="twitter logo" />
-          </a>
-        </p>
-      </nav>
-    </div>
-    <!-- ====== container ====== -->
+    <!-- container  -->
     <div class="container">
-      <header class="mainHeader">
-        <nav class="navMenu">
-          <ul class="menuList">
-            <li><a href="#">portfolio</a></li>
-            <li><a href="#">about me</a></li>
-            <li><a href="#">my blog</a></li>
-            <li><a href="#">reviews</a></li>
-            <li><a href="#">contact me</a></li>
-          </ul>
+      <aside class="sideBar">
+        <a href="/App/HTML/index.html" id="logo">n<sub>r</sub></a>
+
+        <nav class="navLinks">
+          <p>
+            <a href="https:/www.ball.com" target="_blank">
+              <img src="/Images/ball.png" alt="ball logo" />
+            </a>
+          </p>
+
+          <p>
+            <a href="https:/www.be.com" target="_blank">
+              <img src="/Images/be.png" alt="be logo" />
+            </a>
+          </p>
+
+          <p>
+            <a href="https:/www.instagram.com" target="_blank">
+              <img src="/Images/insta.png" alt="instagram logo" />
+            </a>
+          </p>
+
+          <p>
+            <a href="https:/www.twitter.com" target="_blank">
+              <img src="/Images/twitter.png" alt="twitter logo" />
+            </a>
+          </p>
         </nav>
-
-        <div class="schedule">
-          <p><a href="#">Schedule a Call</a></p>
-        </div>
-      </header>
-
-      <main class="main">
-        <div class="heading">
-          <p>Hi There,</p>
+      </aside>
+      <!-- ===== main section ====== -->
+      <section class="mainSection">
+        <!-- ===== main header ====== -->
+        <header class="mainHeader">
+          <nav class="navMenu">
+            <ul class="menuList">
+              <li><a href="#">portfolio</a></li>
+              <li><a href="#">about me</a></li>
+              <li><a href="#">my blog</a></li>
+              <li><a href="#">reviews</a></li>
+              <li><a href="#">contact</a></li>
+            </ul>
+          </nav>
+          <a href="#" class="schedule">Schedule Call</a>
+          <div class="hamburgerMenu">
+            <div class="hamburger"></div>
+            <div class="hamburger"></div>
+          </div>
+        </header>
+        <!-- ===== main  ====== -->
+        <main>
+          <p>hi there,</p>
           <h2>
-            I am <span style="color: rgb(17, 1, 46)">N</span>jimoke
-            <span>R</span>ane
+            I am <span style="color: #00031d">N</span>jimoke <span>R</span>ane
           </h2>
           <h3>I am designer during daytime</h3>
           <h4>&amp; work with batman during nights.</h4>
-          <a href="#"><button>hire me</button> </a>
-        </div>
-        <div class="heroImage">
-          <img src="/Images/njims.png" alt="my picture" />
-        </div>
-      </main>
-      <footer class="mainFooter">
-        <div class="mail">
-          <h5>Email</h5>
-          <p>njims2011@gmail.com</p>
-        </div>
-        <div class="phone">
-          <h5>Phone</h5>
-          <p>237-333-344-32</p>
-        </div>
-        <div class="location">
-          <h5>Location</h5>
-          <p>Yaounde,Cameroun</p>
-        </div>
-      </footer>
+
+          <a href="#">
+            <button>hire me</button>
+          </a>
+        </main>
+        <!-- ===== main footer ====== -->
+
+        <footer class="mainFooter">
+          <div class="mail">
+            <h5>Mail</h5>
+            <p>njims2011@gmail.com</p>
+          </div>
+          <div class="phone">
+            <h5>Phone</h5>
+            <p>+237-694-850-619</p>
+          </div>
+          <div class="location">
+            <h5>Location</h5>
+            <p>Yaounde,Cameroon</p>
+          </div>
+        </footer>
+      </section>
     </div>
+
+    <!-- =====link js to html===== -->
+    <script src="/App/JS/main.js"></script>
   </body>
 </html>

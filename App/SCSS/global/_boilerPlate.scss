@@ -9,6 +9,11 @@
   outline: none;
 
   font-family: verdana, sans-serif, Times, serif;
+
+  // border: 2px solid red;
+}
+:root {
+  --BTN-COLOR: rgb(58, 0, 12);
 }
 
 html {
@@ -26,6 +31,4 @@ a {
 body {
   min-height: 100vh;
   width: 100%;
-
-  display: flex;
 }

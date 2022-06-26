@@ -1,68 +1,8 @@
-/*=========to make my clean i prefered to put flex that come over again in different to be refered as @mixin and call them with include ===========*/
-
-@mixin flexBox {
-  display: flex;
-  justify-content: space-between;
-}
-
 .container {
   position: relative;
+
   width: 100%;
   min-height: 100vh;
 
-  padding: 3em 8em;
-
-  @include flexBox();
-  flex-direction: column;
-
-  /*======== main header ========*/
-
-  .mainHeader {
-    @include flexBox();
-    align-items: center;
-
-    .navMenu {
-      .menuList {
-        display: flex;
-
-        li {
-          position: relative;
-          margin-right: 5em;
-          font-size: 1.4rem;
-          font-weight: 600;
-          /*======= to creat slide bar under links i used speudo element ::after=======*/
-          &::after {
-            position: absolute;
-            content: "";
-            height: 0.2em;
-            width: 0;
-
-            background-color: #282828;
-            left: 0;
-            top: 1.5em;
-
-            transition: 0.5s;
-          }
-          &:hover::after {
-            width: 100%;
-          }
-
-          a {
-            color: #282828;
-          }
-        }
-      }
-    }
-  }
-
-  .schedule {
-    p {
-      font-size: 1.2rem;
-
-      a {
-        color: red;
-        font-weight: 600;
-      }
-    }
-  }
+  display: flex;
 }

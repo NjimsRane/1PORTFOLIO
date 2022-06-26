@@ -9,6 +9,10 @@
   font-family: verdana, sans-serif, Times, serif;
 }
 
+:root {
+  --BTN-COLOR: rgb(58, 0, 12);
+}
+
 html {
   font-size: 62.5%;
 }
@@ -24,7 +28,6 @@ a {
 body {
   min-height: 100vh;
   width: 100%;
-  display: flex;
 }
 
 .sideBar {
@@ -32,118 +35,156 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 1px 1px 2px #999;
-  padding: 2em;
+  padding: 2em 1em;
+  background-color: #fff;
+  box-shadow: 1px 1px 2px #444;
 }
 .sideBar #logo {
-  font-size: 2rem;
-  color: rgb(17, 1, 46);
-  font-weight: 600;
+  color: #00031d;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 .sideBar #logo sub {
-  color: red;
+  color: var(--BTN-COLOR);
 }
-.sideBar .navLinks img {
+.sideBar img {
   width: 2em;
   margin-block: 0.5em;
 }
 
-/*=========to make my clean i prefered to put flex that come over again in different to be refered as @mixin and call them with include ===========*/
 .container {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding: 3em 8em;
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  /*======== main header ========*/
 }
-.container .mainHeader {
+
+.heroImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/Images/njims.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: -1;
+  filter: blur(0);
+}
+
+.heroImageChange {
+  filter: blur(5px);
+}
+
+.mainSection {
+  position: relative;
+  width: 100%;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mainHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.container .mainHeader .navMenu .menuList {
-  display: flex;
-}
-.container .mainHeader .navMenu .menuList li {
-  position: relative;
-  margin-right: 5em;
-  font-size: 1.4rem;
-  font-weight: 600;
-  /*======= to creat slide bar under links i used speudo element ::after=======*/
-}
-.container .mainHeader .navMenu .menuList li::after {
-  position: absolute;
-  content: "";
-  height: 0.2em;
-  width: 0;
-  background-color: #282828;
-  left: 0;
-  top: 1.5em;
+.mainHeader .navMenu {
+  position: fixed;
+  right: 0;
+  top: 4em;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 87%;
+  height: 100vh;
   transition: 0.5s;
+  display: none;
 }
-.container .mainHeader .navMenu .menuList li:hover::after {
-  width: 100%;
-}
-.container .mainHeader .navMenu .menuList li a {
-  color: #282828;
-}
-.container .schedule p {
-  font-size: 1.2rem;
-}
-.container .schedule p a {
-  color: red;
-  font-weight: 600;
-}
-
-.main {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.main .heading {
-  width: 50%;
+.mainHeader .navMenu .menuList {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  font-weight: 700;
-  line-height: 1.5;
+  align-items: center;
 }
-.main .heading p {
+.mainHeader .navMenu .menuList li {
+  font-size: 1.6rem;
+  text-transform: capitalize;
+}
+.mainHeader .navMenu .menuList li a {
+  display: block;
+  padding-block: 3.1em;
+  color: #fff;
+}
+.mainHeader .navMenuChange {
+  display: block;
+}
+.mainHeader .schedule {
+  color: var(--BTN-COLOR);
   font-size: 1.4rem;
+  letter-spacing: 1.5px;
 }
-.main .heading h2 {
-  font-size: 5rem;
+.mainHeader .hamburgerMenu {
+  cursor: pointer;
 }
-.main .heading h2 span {
-  color: red;
+.mainHeader .hamburgerMenu .hamburger {
+  width: 3em;
+  height: 0.4em;
+  background-color: #282828;
+  border-radius: 20px;
+  transition: 0.3s;
 }
-.main .heading h3 {
-  font-size: 2.5em;
+.mainHeader .hamburgerMenu .hamburger:nth-child(1) {
+  margin-bottom: 0.4em;
+  transform: translateX(-5px);
 }
-.main .heading h4 {
-  font-size: 1.5em;
+.mainHeader .hamburgerMenuChange .hamburger:nth-child(1) {
+  transform: translate(0, 4px) rotate(45deg);
 }
-.main .heading button {
-  font-size: 1.7rem;
+.mainHeader .hamburgerMenuChange .hamburger:nth-child(2) {
+  transform: translate(0, -4px) rotate(-45deg);
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+}
+main p {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  font-weight: 900;
+}
+main h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+main h2 span {
+  color: var(--BTN-COLOR);
+}
+main h3 {
+  font-size: 2rem;
+}
+main h4 {
+  font-size: 1.5rem;
+}
+main button {
   margin-top: 2em;
-  background-color: red;
+  padding: 0.6em 4em;
+  background-color: var(--BTN-COLOR);
   color: #fff;
   text-transform: capitalize;
-  padding: 0.5em 5em;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
 .mainFooter {
-  width: 50%;
+  position: relative;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-evenly;
   line-height: 1.5;
-}
-.mainFooter h5 {
-  font-weight: 600;
-  font-size: 1.4rem;
 }/*# sourceMappingURL=main.css.map */
