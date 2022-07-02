@@ -6,82 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Njimoke Rane Soulemanou" />
     <title>PORTFOLIO-I</title>
+
+    <link rel="stylesheet" href="/dist/main.css" />
   </head>
-
-  <!-- ====== links ====== -->
-  <link rel="stylesheet" href="/dist/main.css" />
-  <link rel="icon" href="/Images/njims.png" type="image/x-icon" />
+  <!-- ====== body ======== -->
   <body>
-    <!-- ====== hero image is the back ground image -->
+    <!-- ====== hero image section used as background ======-->
     <div class="heroImage"></div>
-
-    <!-- container  -->
+    <!-- ======= container to put everything===== -->
     <div class="container">
-      <aside class="sideBar">
-        <a href="/App/HTML/index.html" id="logo">n<sub>r</sub></a>
-
-        <nav class="navLinks">
-          <p>
-            <a href="https:/www.ball.com" target="_blank">
+      <!-- ======= aside bar with logo and links to social media pages -->
+      <aside>
+        <a href="/App/HTML/index.html" id="logo">N<sub>R</sub></a>
+        <ul class="menuLinks">
+          <li>
+            <a
+              href="https://www.ball.com"
+              target="_blank"
+              type="no referer no opener"
+            >
               <img src="/Images/ball.png" alt="ball logo" />
             </a>
-          </p>
-
-          <p>
-            <a href="https:/www.be.com" target="_blank">
+          </li>
+          <li>
+            <a
+              href="https://www.be.com"
+              target="_blank"
+              type="no referer no opener"
+            >
               <img src="/Images/be.png" alt="be logo" />
             </a>
-          </p>
-
-          <p>
-            <a href="https:/www.instagram.com" target="_blank">
-              <img src="/Images/insta.png" alt="instagram logo" />
-            </a>
-          </p>
-
-          <p>
-            <a href="https:/www.twitter.com" target="_blank">
+          </li>
+          <li>
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              type="no referer no opener"
+            >
               <img src="/Images/twitter.png" alt="twitter logo" />
             </a>
-          </p>
-        </nav>
+          </li>
+          <li>
+            <a href="htpps://www.instagram.com">
+              <img src="/Images/insta.png" alt="instagram logo" />
+            </a>
+          </li>
+        </ul>
       </aside>
-      <!-- ===== main section ====== -->
-      <section class="mainSection">
-        <!-- ===== main header ====== -->
-        <header class="mainHeader">
-          <nav class="navMenu">
+      <!-- ====== main section will have header and heading ====== -->
+      <main>
+        <!-- ===== header  will have a hamburger menu when mobile, a call schedule icon and a navbar with links===== -->
+        <header>
+          <nav class="navBar">
             <ul class="menuList">
-              <li><a href="#">portfolio</a></li>
+              <li><a href="/App/HTML/index.html">home</a></li>
               <li><a href="#">about me</a></li>
               <li><a href="#">my blog</a></li>
               <li><a href="#">reviews</a></li>
-              <li><a href="#">contact</a></li>
+              <li><a href="#">contact me</a></li>
             </ul>
           </nav>
-          <a href="#" class="schedule">Schedule Call</a>
+          <div class="phoneCall">
+            <img src="/Images/phone-call.png" alt="phone icon" />
+            <a href="tel:+237694850619">Schedule a Call</a>
+          </div>
           <div class="hamburgerMenu">
+            <div class="hamburger"></div>
             <div class="hamburger"></div>
             <div class="hamburger"></div>
           </div>
         </header>
-        <!-- ===== main  ====== -->
-        <main>
-          <p>hi there,</p>
-          <h2>
-            I am <span style="color: #00031d">N</span>jimoke <span>R</span>ane
-          </h2>
-          <h3>I am designer during daytime</h3>
-          <h4>&amp; work with batman during nights.</h4>
-
-          <a href="#">
-            <button>hire me</button>
-          </a>
-        </main>
-      </section>
+        <!-- ===== heading  ===== -->
+        <section class="heading">
+          <p>Hi there,</p>
+          <h1>I am NJIMOKE RANE</h1>
+          <h3>I am web develloper during daytime</h3>
+          <h4>&amp; reading books during nights</h2>
+          <button>Hire me </button>
+        </section>
+      </main>
     </div>
 
-    <!-- =====link js to html===== -->
     <script src="/App/JS/main.js"></script>
   </body>
 </html>

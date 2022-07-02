@@ -1,9 +1,99 @@
-.mainSection {
-  position: relative;
+@mixin flexBox {
+  display: flex;
+  align-items: center;
+}
+
+main {
+  padding: 2em 3em;
   width: 100%;
 
-  padding: 2em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  header {
+    @include flexBox();
+    justify-content: space-between;
+    /* =============== nav bar ===============*/
+    .navBar {
+      position: fixed;
+      top: 4em;
+      left: 4em;
+      background-color: rgba(0, 0, 0, 0.4);
+      width: calc(100% - 39.72px);
+      height: 100%;
+
+      .menuList {
+        text-align: center;
+
+        li {
+          text-transform: capitalize;
+          font-family: var(--FONT-FAMILY);
+          letter-spacing: 2px;
+          font-size: 1.8rem;
+
+          a {
+            display: block;
+            color: var(--HAMBURGER-COLOR);
+            padding-block: 2em;
+          }
+        }
+      }
+
+      transform: translateX(calc(-100% + 1px));
+      transition: 0.5s;
+    }
+    .navBarChange {
+      transform: translateX(0);
+    }
+    /* =============== phone div ===============*/
+    .phoneCall {
+      @include flexBox();
+
+      margin-inline: 2em;
+      gap: 1em;
+
+      img {
+        width: 2em;
+      }
+      a {
+        color: var(--BTN-COLOR);
+        font-weight: 700;
+      }
+    }
+    /* =============== hamburger menu ===============*/
+    .hamburgerMenu {
+      cursor: pointer;
+      .hamburger {
+        width: 3em;
+        height: 0.4em;
+        background-color: var(--HAMBURGER-COLOR);
+        border-radius: 20px;
+
+        transition: 0.5s;
+
+        &:not(:last-child) {
+          margin-bottom: 0.4em;
+        }
+        &:nth-child(odd) {
+          width: 1.5em;
+        }
+        &:nth-child(1) {
+          transform: translateX(100%);
+        }
+      }
+    }
+    .hamburgerMenuChange {
+      .hamburger {
+        &:nth-child(odd) {
+          width: 2em;
+        }
+        &:nth-child(2) {
+          width: 0;
+        }
+        &:nth-child(1) {
+          transform: translate(0, 8px) rotate(45deg);
+        }
+        &:nth-child(3) {
+          transform: translate(0, -8px) rotate(-45deg);
+        }
+      }
+    }
+  }
 }

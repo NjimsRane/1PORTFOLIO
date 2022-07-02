@@ -10,7 +10,10 @@
 }
 
 :root {
-  --BTN-COLOR: rgb(58, 0, 12);
+  --BTN-COLOR: rgb(138, 5, 32);
+  --HAMBURGER-COLOR: whitesmoke;
+  --LOGO-COLOR: #292929;
+  --FONT-FAMILY: sans-serif, verdana, helvetica;
 }
 
 html {
@@ -30,154 +33,173 @@ body {
   width: 100%;
 }
 
-.sideBar {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2em 1em;
-  background-color: #fff;
-  box-shadow: 1px 1px 2px #444;
-}
-.sideBar #logo {
-  color: #00031d;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-.sideBar #logo sub {
-  color: var(--BTN-COLOR);
-}
-.sideBar img {
-  width: 2em;
-  margin-block: 0.5em;
-}
-
-.container {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-}
-
 .heroImage {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  z-index: -1;
   height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/Images/njims.png);
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/Images/njims.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  z-index: -1;
   filter: blur(0);
+  transition: 0.5s;
 }
 
 .heroImageChange {
   filter: blur(5px);
 }
 
-.mainSection {
+.container {
   position: relative;
+  min-height: 100vh;
   width: 100%;
-  padding: 2em;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
-.mainHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.mainHeader .navMenu {
-  position: fixed;
-  right: 0;
-  top: 4em;
-  background-color: rgba(0, 0, 0, 0.8);
-  width: 87%;
-  height: 100vh;
-  transition: 0.5s;
-  display: none;
-}
-.mainHeader .navMenu .menuList {
+aside {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  box-shadow: 2px 2px 4px #333;
+  padding: 1em 0.5em;
+  position: fixed;
+  height: 100%;
+  z-index: 999;
 }
-.mainHeader .navMenu .menuList li {
-  font-size: 1.6rem;
-  text-transform: capitalize;
+aside #logo {
+  font-size: 2rem;
+  font-family: var(--FONT-FAMILY);
+  color: var(--LOGO-COLOR);
+  font-weight: 800;
 }
-.mainHeader .navMenu .menuList li a {
-  display: block;
-  padding-block: 3em;
-  color: #fff;
-}
-.mainHeader .navMenuChange {
-  display: block;
-}
-.mainHeader .schedule {
+aside #logo sub {
   color: var(--BTN-COLOR);
-  font-size: 1.4rem;
-  letter-spacing: 1.5px;
 }
-.mainHeader .hamburgerMenu {
-  cursor: pointer;
-}
-.mainHeader .hamburgerMenu .hamburger {
-  width: 3em;
-  height: 0.4em;
-  background-color: #282828;
-  border-radius: 20px;
-  transition: 0.3s;
-}
-.mainHeader .hamburgerMenu .hamburger:nth-child(1) {
-  margin-bottom: 0.4em;
-  transform: translateX(-5px);
-}
-.mainHeader .hamburgerMenuChange .hamburger:nth-child(1) {
-  transform: translate(0, 4px) rotate(45deg);
-}
-.mainHeader .hamburgerMenuChange .hamburger:nth-child(2) {
-  transform: translate(0, -4px) rotate(-45deg);
+aside img {
+  width: 1.5em;
+  margin-block: 0.5em;
 }
 
 main {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
+  padding: 2em 3em;
   width: 100%;
-  text-align: center;
-  border: 1px solid reds;
 }
-main p {
-  font-size: 1.4rem;
+main header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* =============== nav bar ===============*/
+  /* =============== phone div ===============*/
+  /* =============== hamburger menu ===============*/
+}
+main header .navBar {
+  position: fixed;
+  top: 4em;
+  left: 4em;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: calc(100% - 39.72px);
+  height: 100%;
+  transform: translateX(calc(-100% + 1px));
+  transition: 0.5s;
+}
+main header .navBar .menuList {
+  text-align: center;
+}
+main header .navBar .menuList li {
   text-transform: capitalize;
-  font-weight: 900;
+  font-family: var(--FONT-FAMILY);
+  letter-spacing: 2px;
+  font-size: 1.8rem;
 }
-main h2 {
-  font-size: 3rem;
-  text-align: center;
+main header .navBar .menuList li a {
+  display: block;
+  color: var(--HAMBURGER-COLOR);
+  padding-block: 2em;
 }
-main h2 span {
+main header .navBarChange {
+  transform: translateX(0);
+}
+main header .phoneCall {
+  display: flex;
+  align-items: center;
+  margin-inline: 2em;
+  gap: 1em;
+}
+main header .phoneCall img {
+  width: 2em;
+}
+main header .phoneCall a {
   color: var(--BTN-COLOR);
+  font-weight: 700;
 }
-main h3 {
-  font-size: 2rem;
-}
-main h4 {
-  font-size: 1.5rem;
-}
-main button {
-  margin-top: 2em;
-  padding: 0.6em 4em;
-  background-color: var(--BTN-COLOR);
-  color: #fff;
-  text-transform: capitalize;
-  font-size: 1.5rem;
+main header .hamburgerMenu {
   cursor: pointer;
+}
+main header .hamburgerMenu .hamburger {
+  width: 3em;
+  height: 0.4em;
+  background-color: var(--HAMBURGER-COLOR);
+  border-radius: 20px;
+  transition: 0.5s;
+}
+main header .hamburgerMenu .hamburger:not(:last-child) {
+  margin-bottom: 0.4em;
+}
+main header .hamburgerMenu .hamburger:nth-child(odd) {
+  width: 1.5em;
+}
+main header .hamburgerMenu .hamburger:nth-child(1) {
+  transform: translateX(100%);
+}
+main header .hamburgerMenuChange .hamburger:nth-child(odd) {
+  width: 2em;
+}
+main header .hamburgerMenuChange .hamburger:nth-child(2) {
+  width: 0;
+}
+main header .hamburgerMenuChange .hamburger:nth-child(1) {
+  transform: translate(0, 8px) rotate(45deg);
+}
+main header .hamburgerMenuChange .hamburger:nth-child(3) {
+  transform: translate(0, -8px) rotate(-45deg);
+}
+
+.heading {
+  font-family: var(--FONT-FAMILY);
+  font-weight: 600;
+  color: var(--HAMBURGER-COLOR);
+  line-height: 1.8;
+  margin: 20em 2em;
+  width: 100%;
+  letter-spacing: 2px;
+  text-align: center;
+  filter: blur(0);
+  transition: 0.5s;
+}
+.heading p {
+  font-size: 1.5rem;
+}
+.heading h1 {
+  font-size: 3rem;
+}
+.heading h4 {
+  font-size: 1.2rem;
+}
+.heading button {
+  margin-top: 1.5em;
+  width: 8em;
+  height: 2em;
+  font-size: 2rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.headingChange {
+  filter: blur(5px);
 }/*# sourceMappingURL=main.css.map */

@@ -1,14 +1,11 @@
 const hamburgerMenu = document.querySelector(".hamburgerMenu");
-const navMenu = document.querySelector(".navMenu");
-const HeroImage = document.querySelector(".heroImage");
+const navBar = document.querySelector(".navBar");
+const heroImage = document.querySelector(".heroImage");
+const heading = document.querySelector(".heading");
 
-
-
-
-hamburgerMenu.addEventListener("click",menuChange);
-
-function menuChange(){
+hamburgerMenu.addEventListener("click", () => {
   hamburgerMenu.classList.toggle("hamburgerMenuChange");
-  navMenu.classList.toggle("navMenuChange");
-  HeroImage.classList.toggle("heroImageChange")
-}
+  navBar.classList.toggle("navBarChange");
+  heroImage.classList.toggle("heroImageChange");
+  heading.classList.toggle("headingChange");
+});
