@@ -51,10 +51,24 @@ main {
 
       img {
         width: 2em;
+        animation-name: phone;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+
+        animation-iteration-count: infinite;
+        cursor: pointer;
       }
-      a {
+      @keyframes phone {
+        0% {
+          transform: translate(2px, -2px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+      span {
         color: var(--BTN-COLOR);
-        font-weight: 700;
+        font-weight: 600;
       }
     }
     /* =============== hamburger menu ===============*/

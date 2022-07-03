@@ -40,7 +40,7 @@ body {
   z-index: -1;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/Images/njims.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/Images/njims.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -132,10 +132,23 @@ main header .phoneCall {
 }
 main header .phoneCall img {
   width: 2em;
+  animation-name: phone;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  cursor: pointer;
 }
-main header .phoneCall a {
+@keyframes phone {
+  0% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+main header .phoneCall span {
   color: var(--BTN-COLOR);
-  font-weight: 700;
+  font-weight: 600;
 }
 main header .hamburgerMenu {
   cursor: pointer;
